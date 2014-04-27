@@ -1,0 +1,68 @@
+Name:jingyu liu
+UCLA ID:404193267
+
+
+-------------------------------------------------------------------------------
+
+Response to Exercise 1:
+
+The name of the scheduling algorithm is:
+Round Robin.
+the scheduling algorithm runs in 1234 1234 fashion, and the code picks next runnable proc through (pid+1)mod num_procs 
+which is round robin. 
+
+(Exercise 2 is a coding exercise)
+everytime we iterate through lower pid to higher pid to find the next run process and we guarentee that lower pid runs first every time.
+
+Response to Exercise 3:
+
+
+enter the queue to finish
+
+in millisecond:
+Average turnaround time for scheduling_algorithm 0: [(320*4-3)+(320*4-2)+(320*4-1)+(320*4-0)]/4  =1278.5
+Average turnaround time for scheduling_algorithm 1: (320 + 2*320 + 3*320 + 4*320)/4 	=800
+
+enters wait queue to start running
+Average wait time for scheduling_algorithm 0: (0+1+2+3)/4 = 1.5
+Average wait time for scheduling_algorithm 1: (0 + 320 + 2*320 + 3*320)/4 = 480 
+
+
+Exercise 4:
+
+Did you complete Exercise 4A or Exercise 4B?
+Both
+
+For 4A:
+Field p_priority in process desciptor is provided so I can find the max priority and number of max priority holders to run among them.
+
+For 4B:
+Field p_propotion and p_shares_finished is provided so I can trace shares finished, and if finished or not runnable we go to next(if finished we set shares finished to 0).
+
+Exercise 5:
+During the execution of process 4, the first known timer interrupt occur. 
+When the interrupt happens, the printing is stopped and scheduled so that proc 1
+started running and printed 1 instead of 4 as next digit.
+
+EX6:
+(Exercise 6 is a coding exercise)
+tag name is
+#define fix1
+I implemented interrupt sys_printchar so printchar is done not interruptable.
+
+EX7:
+tag name is
+#define lottery
+I implemented lottery scheduling.
+There is a pool of tickets which is an array, each number in the arrayer is a ticket whose owner has same pid as printed on the ticket.
+Random() function I used is from an online random number generator. Details are in lib.c
+
+EX8:
+tag name is
+#define fix2
+I implemented with atomic_swap function to make printchar atomic.
+
+
+Anything else you'd like us to know:
+In lottery scheduling I used a open source library for random number generating http://www.cs.wm.edu/~va/software/park/park.html
+
